@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session, joinedload, selectinload
 from database import SessionLocal, get_db
 from models import Attendance, AttendanceStatus, Coordenador, Professor, Resident, Session as SessionModel, Team
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
 
 def _generate_pin() -> str:
