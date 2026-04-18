@@ -7,7 +7,7 @@ from views import professor, residente, registro_presenca
 # CONFIG
 # -----------------------------
 st.set_page_config(layout="wide")
-API_URL = "http://127.0.0.1:8000"
+API_URL = "https://presenca-tic55.onrender.com"
 
 # -----------------------------
 # SESSION STATE
