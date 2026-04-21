@@ -31,6 +31,8 @@ def render_data(data: list) -> None:
     for item in data:
         status = item["status"].lower()
 
+        _STATUS_TEXTO = {"presente": "Presente", "justificada": "Falta justificada", "falta": "Falta não justificada"}
+
         if status == "presente":
             bg = "#4CAF50"
         elif status == "justificada":
@@ -49,7 +51,7 @@ def render_data(data: list) -> None:
             ">
                 <b>{item['session']}</b><br>
                 📅 {item['date']}<br>
-                Status: {item['status']}
+                Status: {_STATUS_TEXTO.get(status, item['status'])}
             </div>
             """,
             unsafe_allow_html=True,
