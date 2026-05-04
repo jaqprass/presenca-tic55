@@ -312,11 +312,11 @@ def get_dashboard(db: Session = Depends(get_db)):
             presencas = sum(1 for a in attendances if a.status.name.lower() == "presente")
             justificadas = sum(
                 1 for a in attendances
-                if a.status.name.lower() != "presente" and a.justification
+                if a.status.name.lower() == "justificada"
             )
             nao_justificadas = sum(
                 1 for a in attendances
-                if a.status.name.lower() != "presente" and not a.justification
+                if a.status.name.lower() not in ("presente", "justificada")
             )
             residents_list.append({
                 "name": r.name,
