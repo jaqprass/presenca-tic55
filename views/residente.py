@@ -12,12 +12,10 @@ def render_data(data: list) -> None:
     total_faltas = len(faltas)
 
     faltas_justificadas = len([
-        x for x in faltas if x["justification"] is not None
+        x for x in faltas if x["status"].lower() == "justificada"
     ])
 
-    faltas_nao_justificadas = len([
-        x for x in faltas if x["justification"] is None
-    ])
+    faltas_nao_justificadas = total_faltas - faltas_justificadas
 
     col1, col2, col3 = st.columns(3)
 
